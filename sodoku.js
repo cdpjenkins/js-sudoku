@@ -24,12 +24,17 @@ var is_solved_square = function(board, x, y) {
     }
 }
 
-/*
-var place_number = function(board, x, y, num) {
-    
+
+var get_value = function(board, x, y) {
+    var result;
+    if (is_solved_square(board, x, y)) {
+	result = value_at(board, x, y)[0]
+    } else {
+	result = -1;
+    }
 
     return result;
 }
-*/
+
 
 console.log(default_board);
