@@ -28,7 +28,7 @@ var is_solved_square = function(board, x, y) {
 var get_value = function(board, x, y) {
     var result;
     if (is_solved_square(board, x, y)) {
-	result = value_at(board, x, y)[0]
+	result = value_at(board, x, y)[0];
     } else {
 	result = -1;
     }
@@ -36,5 +36,23 @@ var get_value = function(board, x, y) {
     return result;
 }
 
+var get_board_reprentation = function(board) {
+    var result = [];
 
-console.log(default_board);
+    for (y = 0; y < 9; y++) {
+	var result_row = [];
+
+	for (x = 0; x < 9; x++) {
+	    var value = get_value(board, x, y);
+
+	    result_row.push(value);
+	}
+
+	result.push(result_row);
+    }
+
+    return result;
+}
+
+
+//console.log(default_board);
